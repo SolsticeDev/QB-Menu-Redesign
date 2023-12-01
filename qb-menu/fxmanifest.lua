@@ -14,8 +14,5 @@ files {
     'html/style.css'
 }
 
-shared_scripts {
-    '@ox_lib/init.lua'
-}
 
 lua54 'yes'
