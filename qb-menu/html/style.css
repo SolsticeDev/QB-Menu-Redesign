@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #20232a;
+  --bg-color-light: #282c34;
+  --bg-color-hover: #3b4048;
+  --primary-color: #61dafb;
+  --primary-color-hover: #4ba8e0;
+  --text-color: #fff;
+  --border-radius: 10px;
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --transition-fast: 0.2s ease-in-out;
+  --transition-slow: 0.3s ease;
+}
+
+html, body {
+  background: transparent;
+  overflow: hidden;
+}
+
+#container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 320px;
+  background: var(--bg-color); 
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: none;
+  z-index: 1050;
+  transition: all var(--transition-slow);
+}
+
+#buttons {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#buttons::-webkit-scrollbar {
+  width: 8px;
+}
+
+#buttons::-webkit-scrollbar-track {
+  background: var(--bg-color-light); 
+  border-radius: var(--border-radius);
+}
+
+#buttons::-webkit-scrollbar-thumb {
+  background: var(--primary-color); 
+  border-radius: var(--border-radius);
+}
+
+#buttons::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-hover); 
+}
+
+.button, .title {
+  color: var(--text-color);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  background-color: var(--primary-color); 
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.button {
+  background-color: var(--bg-color-light); 
+  transition: background-color var(--transition-slow), box-shadow var(--transition-slow), transform var(--transition-slow);
+}
+
+.button:hover:not(.disabled) {
+  background-color: var(--bg-color-hover);
+  transform: scale(1.03);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.icon img {
+  width: 25px;
+  height: 25px;
+  margin-right: 12px;
+}
+
+.header {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.text {
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
